@@ -1421,9 +1421,8 @@ const LUNCH = {
 };
 let lunchDay = null;
 
-// 地圖：學員手機開頁時載入真實底圖（CARTO／OpenStreetMap），載不到時改用 OpenStreetMap，再不行就只看清單
+// 地圖：學員手機開頁時載入 OpenStreetMap 底圖；載不到時提示改用各店的 Google 地圖導航
 const TILES = [
-  { url: "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", attr: "© OpenStreetMap 貢獻者 © CARTO", sub: "abcd" },
   { url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png", attr: "© OpenStreetMap 貢獻者", sub: "" },
 ];
 let map = null, markers = [];
