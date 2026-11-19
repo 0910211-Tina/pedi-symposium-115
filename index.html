@@ -907,7 +907,7 @@ footer { padding: 26px 0 120px; color: var(--muted); font-size: 15px; }
 <nav class="jump" aria-label="分頁">
   <ul>
     <li><a href="#tasks" data-tab="tasks"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="3"/><path d="M9 3.5h6v3H9z"/><path d="m9 13 2 2 4-4"/></svg>任務</a></li>
-    <li><a href="#quiz" data-tab="quiz"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg>前測</a></li>
+    <li><a href="#quiz" data-tab="quiz"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg>題庫</a></li>
     <li><a href="#handout" data-tab="handout"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5V5.5"/><path d="M8 8h8"/></svg>講義</a></li>
     <li><a href="#schedule" data-tab="schedule"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>課表</a></li>
     <li><a href="#groups" data-tab="groups"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15.5 14.6c2.6.3 4.5 2.4 4.5 5"/></svg>分組</a></li>
@@ -927,7 +927,7 @@ footer { padding: 26px 0 120px; color: var(--muted); font-size: 15px; }
     </div>
   </section>
   <section id="quiz" class="panel" data-panel="quiz" aria-labelledby="quiz-h" hidden>
-    <h2 id="quiz-h"><span class="h-ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg></span>前測題目</h2>
+    <h2 id="quiz-h"><span class="h-ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg></span>前測題庫</h2>
     <p class="lead">後測有 20 題為前測題目。</p>
     <ol class="quiz" id="quiz-list"></ol>
   </section>
@@ -989,7 +989,7 @@ const LINKS = {
 
 const TASKS = [
   { id: "pretest",  title: "學前測驗", at: "2026-11-21T09:10", until: "2026-11-21T09:30", when: "11/21（六）09:10–09:30",
-    tip: "題目在上方「前測」分頁，作答表單在新分頁開啟。兩邊切換著看、填，最後在表單按送出。" },
+    tip: "題目在上方「題庫」分頁，作答表單在新分頁開啟。兩邊切換著看、填，最後在表單按送出。" },
   { id: "posttest", title: "學後測驗", at: "2026-11-22T13:20", until: "2026-11-22T14:10", when: "11/22（日）13:20–14:10", noLink: true,
     tip: "現場測驗，請準時回到 201 講堂。後測有 20 題為前測題目。" },
   { id: "feedback", title: "滿意度問卷", at: "2026-11-22T16:20", until: "2026-11-22T16:40", when: "11/22（日）簽退前完成",
