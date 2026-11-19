@@ -769,6 +769,7 @@ h2 { font-size: 26px; margin: 0 0 14px; }
 .sched .t { font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap; }
 .sched .topic { font-weight: 700; }
 .sched .who { color: var(--muted); font-size: 16px; }
+.sched .who .org { margin-right: .8em; }
 .sched li.break .topic, .sched li.admin .topic { font-weight: 400; color: var(--muted); }
 .sched li.lunch { background: var(--butter); margin: 0 -18px; padding: 12px 18px; border-top: 0; }
 .sched li.chair { grid-template-columns: minmax(0, 1fr); padding: 14px 0 4px; border-top: 0; color: var(--accent); font-weight: 700; font-size: 16px; }
@@ -843,6 +844,7 @@ footer { padding: 26px 0 120px; color: var(--muted); font-size: 15px; }
   .task { grid-template-columns: minmax(0, 1fr); }
   .task .num { grid-row: auto; width: 40px; height: 40px; font-size: 16px; }
   .wrap { padding: 0 18px; }
+  .sched .who .org, .sched .who .person { display: block; margin: 0; }
   .hero-in { grid-template-columns: minmax(0, 1fr); gap: 0; text-align: center; }
   .hero-art { order: -1; width: 220px; margin: 0 auto 10px; }
   header.hero { padding-top: 22px; }
@@ -1351,6 +1353,12 @@ function renderTabs() {
     `<button type="button" role="tab" id="tab-${k}" aria-selected="${k === currentDay}" aria-controls="sched-list" data-day="${k}">${esc(d.tab)}</button>`).join("");
   $("#day-tabs").onclick = e => { const b = e.target.closest("[data-day]"); if (b) { currentDay = b.dataset.day; renderTabs(); renderSchedule(); } };
 }
+// 講者：「單位　姓名 職稱」以全形空白分開；手機上單位一行、姓名職稱一行
+function whoHTML(w) {
+  const i = w.lastIndexOf("　");
+  if (i < 0) return `<div class="who"><span class="person">${esc(w)}</span></div>`;
+  return `<div class="who"><span class="org">${esc(w.slice(0, i).trim())}</span><span class="person">${esc(w.slice(i + 1).trim())}</span></div>`;
+}
 function renderSchedule() {
   const day = SCHEDULE[currentDay], t = now();
   $("#sched-note").textContent = "實際時程以活動當日為主。";
@@ -1362,7 +1370,7 @@ function renderSchedule() {
     const tag = r.task ? `<a class="tag" href="#task-${r.task}">${esc(TASKS.find(k => k.id === r.task).title)}</a>` : "";
     return `<li class="${esc(r.kind)}${live ? " current" : ""}">
       <span class="t">${esc(r.start)}–${esc(r.end)}</span>
-      <div><span class="topic">${esc(r.topic)}</span>${tag}${r.who ? `<div class="who">${esc(r.who)}</div>` : ""}${extra}</div>
+      <div><span class="topic">${esc(r.topic)}</span>${tag}${r.who ? whoHTML(r.who) : ""}${extra}</div>
     </li>`;
   }).join("");
 }
