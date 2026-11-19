@@ -704,6 +704,7 @@ a { color: var(--accent); }
 header.hero { position: relative; background: var(--sky); padding-top: 34px; overflow: hidden; }
 .hero-in { display: grid; grid-template-columns: minmax(0, 1fr) 280px; align-items: center; gap: 16px; padding-bottom: 18px; }
 .hero-art { width: 100%; height: auto; display: block; }
+.hero h1 .t2 { white-space: nowrap; }
 .kicker { margin: 0 0 10px; color: var(--accent); font-weight: 700; font-size: 15px; letter-spacing: .04em; }
 .wave { display: block; width: 100%; height: 40px; margin-top: -8px; }
 .hero h1 { font-size: clamp(26px, 6.4vw, 38px); line-height: 1.3; margin: 0 0 18px; letter-spacing: .02em; }
@@ -957,6 +958,7 @@ footer { padding: 26px 0 120px; color: var(--muted); font-size: 15px; }
 
 const EVENT = {
   title: "115 年度進階小兒學術研討會",
+  titleLines: ["115 年度", "進階小兒學術研討會"],   // 頁首標題分兩行
   dates: "115 年 11 月 21–22 日（六、日）",
   place: "臺大醫學院 2 樓 201 講堂",
   address: "台北市仁愛路一段 1 號",
@@ -1496,7 +1498,7 @@ $("#food-list").addEventListener("click", e => { const b = e.target.closest("[da
 /* ---------- 其他 ---------- */
 function renderStatic() {
   document.title = `${EVENT.title}｜學員專區`;
-  $("#ev-title").textContent = EVENT.title;
+  $("#ev-title").innerHTML = `<span class="t1">${esc(EVENT.titleLines[0])}</span><br><span class="t2">${esc(EVENT.titleLines[1])}</span>`;
   $("#ev-meta").innerHTML = `<strong>${esc(EVENT.dates)}</strong><br>${esc(EVENT.place)}（${esc(EVENT.address)}）`;
   $("#rule-list").innerHTML = RULES.map(r => `<li>${esc(r)}</li>`).join("");
   $("#handout-body").innerHTML = linkOK(LINKS.handout.url)
