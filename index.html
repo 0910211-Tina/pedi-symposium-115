@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#F6F2EA">
+<meta name="theme-color" content="#F3F7FC">
 <title>115 年度進階小兒學術研討會｜學員專區</title>
 <style>
 /* Leaflet 1.9.4 (BSD-2-Clause) */
@@ -671,21 +671,21 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	}
 
 :root {
-  --paper: #F6F2EA;
-  --card: #FFFDF8;
-  --ink: #26221D;
-  --muted: #5B544A;
-  --line: #DDD5C7;
-  --accent: #8A3B12;
+  --paper: #F3F7FC;
+  --card: #FFFFFF;
+  --ink: #12263F;
+  --muted: #4A5D74;
+  --line: #D5E0EC;
+  --accent: #1F5FA8;
   --accent-ink: #FFFFFF;
-  --accent-soft: #F4E4D7;
-  --ok: #2E5B39;
-  --ok-soft: #E2EDDF;
+  --accent-soft: #E3EEFA;
+  --ok: #0E6E8A;
+  --ok-soft: #DFF1F6;
   --warn-soft: #FBF0D9;
   --road: #D4CBBB;
   --road-major: #BFB3A0;
   --park: #DCE5D0;
-  --block: #EDE6DA;
+  --block: #E6EEF7;
   --radius: 14px;
   --font: "Times New Roman", "Microsoft JhengHei", "微軟正黑體", "PingFang TC", "Noto Sans TC", sans-serif;
 }
@@ -702,7 +702,7 @@ header.hero { padding-top: 48px; padding-bottom: 20px; }
 .hero .meta { color: var(--muted); margin: 0; line-height: 1.9; }
 .hero .meta strong { color: var(--ink); font-weight: 700; }
 
-nav.jump { position: sticky; top: 0; z-index: 20; background: rgba(246,242,234,.94); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+nav.jump { position: sticky; top: 0; z-index: 20; background: rgba(243,247,252,.94); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
 nav.jump ul { display: flex; gap: 4px; list-style: none; margin: 0 auto; padding: 6px 12px; max-width: 760px; overflow-x: auto; scrollbar-width: none; }
 nav.jump li { flex: none; }
 nav.jump a { display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 14px; border-radius: 999px; text-decoration: none; color: var(--ink); font-weight: 700; font-size: 16px; }
@@ -720,17 +720,10 @@ h2 { font-size: 26px; margin: 0 0 12px; }
 .notice .row { display: flex; flex-wrap: wrap; gap: 8px; }
 
 /* now card */
-.now { margin-top: 30px; background: var(--ink); color: #FBF8F2; border-radius: var(--radius); padding: 26px 24px 24px; }
-.now .label { font-size: 15px; color: #D9D1C4; margin: 0 0 8px; }
-.now .what { font-size: 22px; font-weight: 700; margin: 0; line-height: 1.45; }
-.now .sub { margin: 12px 0 0; color: #E9E2D6; line-height: 1.8; }
-.now .btn { margin: 20px 10px 0 0; }
-.now .btn.primary { background: #F4E4D7; color: var(--ink); }
-
 /* buttons */
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 20px; border-radius: 999px; border: 0; font: inherit; font-weight: 700; font-size: 17px; text-decoration: none; cursor: pointer; transition: background-color .15s ease, transform .15s ease; }
 .btn.primary { background: var(--accent); color: var(--accent-ink); }
-.btn.primary:hover { background: #6F2E0D; }
+.btn.primary:hover { background: #174C88; }
 .btn.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
 .btn.ok { background: var(--ok); color: #FFFFFF; }
 .btn[aria-disabled="true"] { background: var(--block); color: var(--muted); cursor: not-allowed; border: 0; }
@@ -749,7 +742,7 @@ h2 { font-size: 26px; margin: 0 0 12px; }
 /* schedule */
 .tabs { display: flex; gap: 8px; margin: 0 0 14px; }
 .tabs button { flex: 1; min-height: 48px; border-radius: 999px; border: 1.5px solid var(--ink); background: transparent; color: var(--ink); font: inherit; font-weight: 700; font-size: 17px; cursor: pointer; }
-.tabs button[aria-selected="true"] { background: var(--ink); color: #FBF8F2; }
+.tabs button[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: #FFFFFF; }
 .sched { list-style: none; margin: 0; padding: 0; }
 .sched li { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 4px 16px; padding: 16px 0; border-top: 1px solid var(--line); }
 .sched li:first-child { border-top: 0; }
@@ -778,13 +771,13 @@ h2 { font-size: 26px; margin: 0 0 12px; }
 /* food */
 .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
 .filters button { min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1.5px solid var(--ink); background: transparent; color: var(--ink); font: inherit; font-weight: 700; font-size: 16px; cursor: pointer; }
-.filters button[aria-pressed="true"] { background: var(--ink); color: #FBF8F2; }
-.mapbox { height: 440px; border-radius: var(--radius); border: 1px solid var(--line); background: #EEE9DF; overflow: hidden; z-index: 0; }
+.filters button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #FFFFFF; }
+.mapbox { height: 440px; border-radius: var(--radius); border: 1px solid var(--line); background: #EAF0F7; overflow: hidden; z-index: 0; }
 .mapbox .pending { margin: 16px; }
 .map-cap { font-size: 15px; color: var(--muted); margin: 8px 0 16px; }
 .mk { display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: var(--ink); color: #FFFFFF; border: 2px solid #FFFFFF; box-shadow: 0 1px 4px rgba(0,0,0,.35); font: 700 14px/1 var(--font); }
 .mk.in { background: var(--ok); }
-.mk.dim { background: #6B645A; opacity: .75; }
+.mk.dim { background: #5E6E82; opacity: .75; }
 .mk-origin { display: inline-flex; align-items: center; white-space: nowrap; height: 30px; padding: 0 10px; border-radius: 8px; background: var(--accent); color: #FFFFFF; border: 2.5px solid #FFFFFF; box-shadow: 0 1px 4px rgba(0,0,0,.35); font: 700 15px/1 var(--font); }
 .leaflet-popup-content { font: 15px/1.5 var(--font); }
 .leaflet-container a.leaflet-popup-close-button { width: 32px; height: 32px; font-size: 22px; }
@@ -836,7 +829,6 @@ footer { padding: 26px 0 120px; color: var(--muted); font-size: 15px; }
   <h1 id="ev-title"></h1>
   <p class="meta" id="ev-meta"></p>
   <div id="line-notice"></div>
-  <div class="now" id="now" aria-live="polite"></div>
 </header>
 
 <nav class="jump" aria-label="頁內導覽">
@@ -852,8 +844,8 @@ footer { padding: 26px 0 120px; color: var(--muted); font-size: 15px; }
 
 <main class="wrap">
   <section id="tasks" aria-labelledby="tasks-h">
-    <h2 id="tasks-h">要完成的事</h2>
-    <p class="lead">連結都會在新分頁開啟，這一頁不會被關掉；填完切回這個分頁就能繼續看題目與課表。</p>
+    <h2 id="tasks-h">任務三部曲</h2>
+    <p class="lead">測驗與問卷的連結會在新分頁開啟，這一頁不會被關掉；填完切回這個分頁就能繼續看題目與課表。</p>
     <div class="tasks" id="task-list"></div>
   </section>
 
@@ -927,8 +919,10 @@ const LINKS = {
 };
 
 const TASKS = [
-  { id: "pretest",  title: "學前測試", at: "2026-11-21T09:10", until: "2026-11-21T09:30", when: "11/21（六）09:10–09:30",
+  { id: "pretest",  title: "學前測驗", at: "2026-11-21T09:10", until: "2026-11-21T09:30", when: "11/21（六）09:10–09:30",
     tip: "題目在本頁下方「前測題目」，作答表單在新分頁開啟。兩個分頁切換著看、填，最後在表單按送出。" },
+  { id: "posttest", title: "學後測驗", at: "2026-11-22T13:20", until: "2026-11-22T14:10", when: "11/22（日）13:20–14:10", noLink: true,
+    tip: "現場測驗，請準時回到 201 講堂。後測有 20 題為前測題目。" },
   { id: "feedback", title: "滿意度問卷", at: "2026-11-22T16:20", until: "2026-11-22T16:40", when: "11/22（日）簽退前完成",
     tip: "Google 表單會在新分頁開啟。填完按「提交」，看到「已記錄你的回覆」才算完成。" },
 ];
@@ -1145,7 +1139,7 @@ const SCHEDULE = {
     { start: "11:20", end: "12:10", topic: "小兒 ECMO 之臨床應用與照護", who: "臺大醫院兒童醫院 小兒部　余英豪 醫師", kind: "talk" },
     { start: "12:10", end: "13:00", topic: "午休", kind: "lunch" },
     { start: "12:50", end: "13:20", topic: "中午簽到", who: "曾筠婷 監事", kind: "admin", overlap: true },
-    { start: "13:20", end: "14:10", topic: "學後測試", who: "曾筠婷 監事", kind: "test" },
+    { start: "13:20", end: "14:10", topic: "學後測試", who: "曾筠婷 監事", kind: "test", task: "posttest" },
     { start: "14:10", end: "14:20", topic: "Break", kind: "break" },
     { start: "14:20", end: "16:20", topic: "呼吸器技術操作：分組練習（每站 40 分鐘）", kind: "workshop" },
     { start: "16:20", end: "16:40", topic: "簽退並繳交評值表、歸賦", who: "曾筠婷 監事", kind: "admin", task: "feedback" },
@@ -1249,55 +1243,11 @@ function renderLineNotice() {
 }
 
 /* ---------- 現在要做的事 ---------- */
-function allRows() {
-  const out = [];
-  for (const day of Object.values(SCHEDULE))
-    for (const r of day.rows) if (r.start && !r.overlap) out.push({ ...r, s: at(day.date, r.start), e: at(day.date, r.end), date: day.date });
-  return out.sort((a, b) => a.s - b.s);
-}
-function renderNow() {
-  const t = now(), rows = allRows(), el = $("#now");
-  const first = rows[0].s, last = rows[rows.length - 1].e;
-  const fmt = d => d.toLocaleTimeString("zh-TW", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "Asia/Taipei" });
-  let label, what, sub = "", btn = "";
-
-  const pendingTask = TASKS.find(k => t >= new Date(iso(k.at) - 15 * 60000) && t <= new Date(+iso(k.until) + 30 * 60000));
-  if (t < new Date(+first - 24 * 3600000)) {
-    label = "研討會將於";
-    what = `${EVENT.dates} 舉行`;
-    sub = `第一天 08:50 報到，09:10 學前測試。先把這一頁加到主畫面或書籤，當天比較好找。`;
-  } else if (t > last) {
-    label = "研討會已結束";
-    what = "謝謝參與";
-    sub = "證書請留意學會網站公告的下載時間（公告後一個月內）。";
-  } else if (pendingTask) {
-    label = `現在：${pendingTask.when}`;
-    what = `請完成「${pendingTask.title}」`;
-    sub = pendingTask.tip;
-    btn = taskButton(pendingTask, true) + (pendingTask.id === "pretest" ? ` <a class="btn primary" href="#quiz">看前測題目</a>` : "");
-  } else {
-    const cur = rows.find(r => t >= r.s && t < r.e);
-    const next = rows.find(r => r.s > t);
-    if (cur) {
-      label = `現在 ${fmt(t)}`;
-      what = cur.kind === "lunch" ? "午休時間" : cur.topic;
-      sub = cur.kind === "lunch" ? `${cur.end} 前回到 201 講堂。` : (cur.who || "");
-      if (cur.kind === "lunch") btn = `<a class="btn primary" href="#lunch">看午餐地圖</a>`;
-      if (cur.kind === "workshop") btn = `<a class="btn primary" href="#groups">看我的組別</a>`;
-    } else if (next) {
-      label = `下一個：${next.date === SCHEDULE.sat.date ? "11/21（六）" : "11/22（日）"} ${next.start}`;
-      what = next.topic;
-      sub = next.who || "";
-    }
-  }
-  el.innerHTML = `<p class="label">${esc(label)}</p><p class="what">${esc(what)}</p>${sub ? `<p class="sub">${esc(sub)}</p>` : ""}${btn}`;
-}
-
 /* ---------- 任務 ---------- */
-function taskButton(k, inNow = false) {
-  const L = LINKS[k.id];
-  const cls = inNow ? "btn primary" : "btn primary";
-  if (!linkOK(L.url)) return `<span class="btn" aria-disabled="true">連結準備中</span>`;
+function taskButton(k) {
+  if (k.noLink) return "";
+  const L = LINKS[k.id], cls = "btn primary";
+  if (!L || !linkOK(L.url)) return `<span class="btn" aria-disabled="true">連結準備中</span>`;
   return `<a class="${cls}" href="${esc(L.url)}" target="_blank" rel="noopener">${esc(L.label)}</a>`;
 }
 function renderTasks() {
@@ -1307,16 +1257,13 @@ function renderTasks() {
       <h3>${esc(k.title)}</h3>
       <p class="when">${esc(k.when)}</p>
       <div>
-        <div class="actions">
-          ${taskButton(k)}
-        </div>
+        ${k.noLink ? "" : `<div class="actions">${taskButton(k)}</div>`}
         <p class="tip">${esc(k.tip)}</p>
       </div>
     </div>`;
   }).join("");
 }
 
-document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") renderNow(); });
 
 /* ---------- 前測題目 ---------- */
 function renderQuiz() {
@@ -1511,13 +1458,11 @@ renderStatic();
 renderLineNotice();
 renderTasks();
 renderQuiz();
-renderNow();
 renderTabs();
 renderSchedule();
 renderGroups();
 FOOD.sort((a, b) => (a.inside ? 0 : walkMin(a)) - (b.inside ? 0 : walkMin(b)));
 renderFood();
-setInterval(renderNow, 60000);
 </script>
 </body>
 </html>
