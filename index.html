@@ -698,13 +698,14 @@ html, body { overflow-x: clip; }
 body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.75; -webkit-text-size-adjust: 100%; }
 a { color: var(--accent); }
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
-.wrap { max-width: 760px; margin: 0 auto; padding: 0 18px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 
 /* header */
 header.hero { position: relative; background: var(--sky); padding-top: 34px; overflow: hidden; }
-.hero-in { display: grid; grid-template-columns: minmax(0, 1fr) 280px; align-items: center; gap: 16px; padding-bottom: 18px; }
+.hero-in { display: grid; grid-template-columns: minmax(0, 1fr) 340px; align-items: center; gap: 32px; padding-bottom: 18px; }
 .hero-art { width: 100%; height: auto; display: block; }
 .hero h1 .t2 { white-space: nowrap; }
+.hero .meta .addr { font-size: .92em; }
 .kicker { margin: 0 0 10px; color: var(--accent); font-weight: 700; font-size: 15px; letter-spacing: .04em; }
 .wave { display: block; width: 100%; height: 40px; margin-top: -8px; }
 .hero h1 { font-size: clamp(26px, 6.4vw, 38px); line-height: 1.3; margin: 0 0 18px; letter-spacing: .02em; }
@@ -718,7 +719,7 @@ header.hero { position: relative; background: var(--sky); padding-top: 34px; ove
 .hero .meta strong { color: var(--ink); font-weight: 700; }
 
 nav.jump { position: sticky; top: 0; z-index: 20; background: rgba(243,247,252,.94); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
-nav.jump ul { display: flex; gap: 4px; list-style: none; margin: 0 auto; padding: 6px 12px; max-width: 760px; overflow-x: auto; scrollbar-width: none; }
+nav.jump ul { display: flex; gap: 4px; list-style: none; margin: 0 auto; padding: 8px 18px; max-width: 1120px; overflow-x: auto; scrollbar-width: none; }
 nav.jump li { flex: none; }
 nav.jump a { display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 44px; padding: 0 14px; border-radius: 999px; text-decoration: none; color: var(--ink); font-weight: 700; font-size: 16px; }
 nav.jump a .ico { width: 19px; height: 19px; }
@@ -825,21 +826,33 @@ h2 { font-size: 26px; margin: 0 0 14px; }
 .rules li + li { margin-top: 6px; }
 footer { padding: 26px 0 120px; color: var(--muted); font-size: 15px; }
 
+@media (min-width: 980px) {
+  .tasks { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; }
+  .task { grid-template-columns: minmax(0, 1fr); align-content: start; }
+  .task .num { grid-row: auto; margin-bottom: 8px; }
+  .quiz { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .food { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .groups { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .mapbox { height: 520px; }
+  .hero h1 { font-size: 44px; }
+}
 @media (max-width: 600px) {
   body { font-size: 16.5px; }
   .sched li { grid-template-columns: minmax(0, 1fr); }
   .sched li.lunch { margin: 0 -18px; }
   .task { grid-template-columns: minmax(0, 1fr); }
   .task .num { grid-row: auto; width: 40px; height: 40px; font-size: 16px; }
-  .hero-in { grid-template-columns: minmax(0, 1fr); gap: 0; }
-  .hero-art { order: -1; width: 210px; margin: -14px 0 4px auto; }
-  header.hero { padding-top: 18px; }
+  .wrap { padding: 0 18px; }
+  .hero-in { grid-template-columns: minmax(0, 1fr); gap: 0; text-align: center; }
+  .hero-art { order: -1; width: 220px; margin: 0 auto 10px; }
+  header.hero { padding-top: 22px; }
+  nav.jump ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; padding: 6px 10px; overflow: visible; }
+  nav.jump a { padding: 0 6px; }
   .h-ico { width: 36px; height: 36px; margin-right: 10px; vertical-align: -7px; }
   h2 { font-size: 23px; }
   .rot thead { display: none; }
   .rot tr { display: block; border-top: 1px solid var(--line); padding: 8px 0; }
   .rot td { display: block; border: 0; padding: 2px 0; }
-  nav.jump a { padding: 0 10px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .btn, .pin circle { transition: none; }
@@ -1499,7 +1512,7 @@ $("#food-list").addEventListener("click", e => { const b = e.target.closest("[da
 function renderStatic() {
   document.title = `${EVENT.title}｜學員專區`;
   $("#ev-title").innerHTML = `<span class="t1">${esc(EVENT.titleLines[0])}</span><br><span class="t2">${esc(EVENT.titleLines[1])}</span>`;
-  $("#ev-meta").innerHTML = `<strong>${esc(EVENT.dates)}</strong><br>${esc(EVENT.place)}（${esc(EVENT.address)}）`;
+  $("#ev-meta").innerHTML = `<strong>${esc(EVENT.dates)}</strong><br>${esc(EVENT.place)}<br><span class="addr">${esc(EVENT.address)}</span>`;
   $("#rule-list").innerHTML = RULES.map(r => `<li>${esc(r)}</li>`).join("");
   $("#handout-body").innerHTML = linkOK(LINKS.handout.url)
     ? `<a class="btn primary" href="${esc(LINKS.handout.url)}" target="_blank" rel="noopener">${esc(LINKS.handout.label)}</a>`
